@@ -105,3 +105,4 @@ if(module.id === ".") {
   var x = new khp("0", "1234");
   x.k("2+2").then(console.log);
 }
+module.exports = khp;
