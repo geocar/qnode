@@ -79,7 +79,7 @@ khp.prototype.clode=khp.prototype.kclose=function() {
 khp.prototype.ks = function() {
   var a,b;
   if(arguments.length == 1) a=c.enc(arguments[0]); else a=c.enc([].slice.call(arguments,0));
-  memcpy(b=new Buffer(a.length),a);
+  memcpy(b=new Buffer(a.byteLength),a);
   this.socket.write(b)
   return this;
 };
