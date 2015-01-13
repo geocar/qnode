@@ -1,0 +1,15 @@
+{
+  "name": "node-kdb",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "bluebird": "~2.6.4",
+    "memcpy": "~0.5.0"
+  }
+}
