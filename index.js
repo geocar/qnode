@@ -21,7 +21,7 @@ function khp(h,p, auth){
         if(t===-128) {
           err=new Error("error "+b.toString("ascii",9,n-1));
         } else {
-          var a;memcpy(a=new ArrayBuffer(n),b.slice(0,n));
+          var a;memcpy.native(a=new ArrayBuffer(n),b.slice(0,n));
           try { body = c.dec(a); err=null; } catch(e) { body=null, err=e; };
         }
         if(err !== null || b.readUInt8(1)==2) {
@@ -79,7 +79,7 @@ khp.prototype.clode=khp.prototype.kclose=function() {
 khp.prototype.ks = function() {
   var a,b;
   if(arguments.length == 1) a=c.enc(arguments[0]); else a=c.enc([].slice.call(arguments,0));
-  memcpy(b=new Buffer(a.byteLength),a);
+  memcpy.native(b=new Buffer(a.byteLength),a);
   this.socket.write(b)
   return this;
 };
@@ -92,7 +92,7 @@ khp.prototype.k = function() {
     r=d.promise, cb=function(err,body) { if(err)d.reject(err);return d.resolve(body) };
   }
   if(n == 1) a=c.enc(arguments[0]); else a=c.enc([].slice.call(arguments,0,n));
-  memcpy(b=new Buffer(a.byteLength),a);
+  memcpy.native(b=new Buffer(a.byteLength),a);
   b.writeUInt8(1,1);
   this.tasks.push(cb);
   this.socket.write(b);
